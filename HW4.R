@@ -53,7 +53,6 @@ preprints<-preprint_growth %>% filter(archive %in%
                                         c("bioRxiv", "arXiv q-bio", "PeerJ Preprints")) %>%filter(count > 0) %>%
   mutate(archive = factor(archive, levels = c("bioRxiv", "arXiv q-bio", "PeerJ Preprints")))
 preprints_final <- filter(preprints, date == ymd("2017-01-01"))
-1
 ggplot(preprints) +
   aes(date, count, color = archive, fill = archive) +
   geom_line(size = 1) +
@@ -89,4 +88,5 @@ ggplot(subset, aes(x = date, y = count, color = archive)) +
   labs(title = "Preprint Counts", y = "Preprints / Month", color = "Archive") +
   # (d) Move legend to the right
   theme(legend.position = "right")
+
 
